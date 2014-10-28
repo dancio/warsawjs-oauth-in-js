@@ -7,6 +7,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="stylesheet" href="themes/warsawjs/styles/screen.css">
     <link rel="stylesheet" href="themes/warsawjs/styles/custom.css">
+    <link rel="stylesheet" href="themes/warsawjs/styles/specific.css">
 </head>
 <body class="list">
     <header class="caption">
@@ -20,107 +21,351 @@
                 <img src="themes/warsawjs/pictures/logo.png">
             </div>
             <div class="content">
-                <h2>WarsawJS Presentation Template</h2>
-                <p>Author Name <a href="http://twitter.com/author">@author</a>
+                <h2>oAuth in JS</h2>
+                <p>Daniel Kopka <a href="http://twitter.com/danielkopka">@danielkopka</a>
             </div>
         </div>
     </section>
 
-    <section class="slide">
+    <section class="slide topics">
         <div>
-            <h2>Plain Text on Your Slides</h2>
+            <h2>Topics</h2>
 
-            <p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt
-                ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco
-                laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in
-                reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat
-                cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.
-            </p>
+            <h3>What?</h3>
+            <h3>Why?</h3>
+            <h3>How?</h3>
+            <h3>Why not?</h3>
         </div>
     </section>
 
-    <section class="slide">
+    <section class="slide shout distant">
         <div>
-            <h2>All Kind of Lists</h2>
+            <h2><span class="distinct">What</span> is oAuth?</h2>
+        </div>
+    </section>
+
+    <section class="slide cover shout distant distinct authentication">
+        <h2><span class="distinct">Authentication</span></h2>
+        <img src="pictures/authentication.jpg" alt="">
+    </section>
+
+    <section class="slide oauth-def">
+        <div>
+            <figure>
+                <blockquote>
+                    <p>OAuth is an open protocol to allow secure authorization in a simple and standard method from web, mobile, and desktop applications.</p>
+                </blockquote>
+            </figure>
+        </div>
+    </section>
+
+    <section class="slide long">
+        <div>
+            <h2>oAuth1.0a</h2>
             <ol>
-                <li>Simple lists are marked with bullets</li>
-                <li>Ordered lists begin with a number</li>
-                <li>You can even nest lists one inside another
-                    <ul>
-                        <li>Or mix their types</li>
-                        <li>But do not go too far</li>
-                        <li>Otherwise audience will be bored</li>
-                    </ul>
-                </li>
-                <li>Look, seven rows exactly!</li>
+                <li>The client obtains an unauthorized <code>request token</code>.</li>
+                <li>The client redirects the user to a login dialog at the provider.</li>
+                <li>The user authorizes the <code>request token</code>, associating it with their account.</li>
+                <li>The provider redirects the user back to the client.</li>
+                <li>The client exchanges the <code>request token</code> for an <code>access token</code>.</li>
+                <li>The <code>access token</code> allows the client to access a protected resource at the provider, on behalf of the user.</li>
             </ol>
         </div>
     </section>
 
-    <section class="slide">
+    <section class="slide long">
         <div>
-            <h2>JavaScript Samples</h2>
-            <pre>
-                <code><mark class="comment">// Crockford style IIFE</mark></code>
-                <code>(function () {</code>
-                <code>  var <mark>someVar</mark> = 'value';</code>
-                <code>  console.<mark class="important">log</mark>(someVar);</code>
-                <code>}());</code>
-            </pre>
+            <h2>oAuth2.0</h2>
+            <ol>
+                <li>The client redirects the user to a login dialog at the provider.</li>
+                <li>The user authorizes the client.</li>
+                <li>The provider redirects the user back to the client, additionally returning an <code>access_token</code>.</li>
+                <li>The client validates the <code>access token</code>.</li>
+                <li>The <code>access token</code> allows the client to access a protected resource at the provider.</li>
+            </ol>
         </div>
     </section>
+
+    <section class="slide shout distant">
+        <div>
+            <h2><span class="distinct">Why</span>should I use it?</h2>
+        </div>
+    </section>
+
     <section class="slide">
         <div>
-            <h2>Even Tables</h2>
-            <table>
-                <tr>
-                    <th scope="col">Locavore</th>
-                    <th>Umami</th>
-                    <th>Helvetica</th>
-                    <th>Vegan</th>
-                </tr>
-                <tr>
-                    <th scope="row">Fingerstache</th>
-                    <td>Kale</td>
-                    <td>Chips</td>
-                    <td>Keytar</td>
-                </tr>
-                <tr>
-                    <th scope="row">Sriracha</th>
-                    <td>Gluten-free</td>
-                    <td>Ennui</td>
-                    <td>Keffiyeh</td>
-                </tr>
-                <tr>
-                    <th scope="row">Thundercats</th>
-                    <td>Jean</td>
-                    <td>Shorts</td>
-                    <td>Biodiesel</td>
-                </tr>
-                <tr>
-                    <th scope="row">Terry</th>
-                    <td>Richardson</td>
-                    <td>Swag</td>
-                    <td>Blog</td>
-                </tr>
-            </table>
-            <p>It’s good to have information organized.</p>
+            <h2>Why should I use it?</h2>
+            <ul>
+                <li>Before oAuth - aka the Dark Ages</li>
+                <li class="next">Apps shouldn't store your password</li>
+                <li class="next">Apps shouldn't have full access to your account</li>
+                <li class="next">Compromised apps expose user's password</li>
+                <li class="next">Facebook is so cool (or not) because...</li>
+            </ul>
         </div>
     </section>
 
     <section class="slide cover">
+        <img src="pictures/farmville-2.jpg" alt="">
+    </section>
+
+    <section class="slide shout distant">
         <div>
-            <img src="./themes/warsawjs/pictures/bigphoto.jpg" alt="">
+            <h2><span class="distinct">How</span> can I do this?</h2>
         </div>
     </section>
 
-    <section class="slide shout">
+    <section class="slide shout distant">
         <div>
-            <h2>See you next month at WarsawJS</h2>
+            <h2>1. Get your credentials</h2>
         </div>
     </section>
 
-    <p class="badge"><a href="https://github.com/warsawjs/presentation-template">Fork me on Github</a></p>
+    <section class="slide shout distant">
+        <div>
+            <h2>2. Generate code for login button</h2>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Facebook example</h2>
+            <pre>
+                <code>&lt;div id="fb-root"&gt;&lt;/div&gt;</code>
+                <code>&lt;script&gt;(function(d, s, id) {</code>
+                <code>  var js, fjs = d.getElementsByTagName(s)[0];</code>
+                <code>  if (d.getElementById(id)) return;</code>
+                <code>  js = d.createElement(s); js.id = id;</code>
+                <code>  js.src = "//connect.facebook.net/pl_PL/sdk.js#xfbml=1&<br />appId=<mark class="important">1234567</mark>&version=v2.0";</code>
+                <code>  fjs.parentNode.insertBefore(js, fjs);</code>
+                <code>}(document, 'script', 'facebook-jssdk'));&lt;/script&gt;</code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide shout distant">
+        <div>
+            <h2>3. Prepare your "success/failure" page</h2>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>How it looks in practice?</h2>
+            <ul>
+                <li>Plain JavaScript</li>
+                <li class="next">With native JavaScript SDK</li>
+                <li class="next">With support of hello.js</li>
+                <li class="next">With support of oauth.io</li>
+                <li class="next">Ember.js</li>
+                <li class="next">AngularJS</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Plain JavaScript</h2>
+            <h3>Don't do this, just don't</h3>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>JavaScript SDK - Include</h2>
+            <pre>
+                <code>(function(d, s, id) {</code>
+                <code> var js, fjs = d.getElementsByTagName(s)[0];</code>
+                <code> if (d.getElementById(id)) return;</code>
+                <code> js = d.createElement(s); js.id = id;</code>
+                <code> js.src = "//connect.facebook.net/en_US/sdk.js";</code>
+                <code> fjs.parentNode.insertBefore(js, fjs);</code>
+                <code>}(document, 'script', 'facebook-jssdk'));</code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>JavaScript SDK - Callback</h2>
+            <pre>
+                <code>function statusChangeCallback(response) {</code>
+                <code>  console.log('statusChangeCallback');</code>
+                <code>  console.log(response);</code>
+                <code>}</code>
+                <code>function checkLoginState() {</code>
+                <code> FB.getLoginStatus(function(response) {</code>
+                <code>  statusChangeCallback(response);</code>
+                <code> });</code>
+                <code>}</code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>JavaScript SDK - Configure</h2>
+            <pre>
+                <code>window.fbAsyncInit = function() {</code>
+                <code> FB.init({</code>
+                <code>  appId      : '<mark class="important">{your-app-id}</mark>',</code>
+                <code>  cookie     : true, </code>
+                <code>  xfbml      : true,</code>
+                <code>  version    : 'v2.1'</code>
+                <code> });</code>
+                <code> FB.getLoginStatus(statusChangeCallback);</code>
+                <code>};</code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>JavaScript SDK - Button</h2>
+            <pre>
+                <code>&lt;fb:login-button </code>
+                <code>  scope="public_profile,email" </code>
+                <code>  onlogin="<mark class="important">checkLoginState();</mark>"&gt;</code>
+                <code>&lt;/fb:login-button&gt;</code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Hello.js - Include</h2>
+            <pre>
+                <code>&lt;script src="./dist/hello.all.js"&gt;</script></code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Hello.js - Configure</h2>
+            <pre>
+                <code>hello.init({ </code>
+                <code>  facebook : FACEBOOK_CLIENT_ID,</code>
+                <code>  windows  : WINDOWS_CLIENT_ID,</code>
+                <code>  google   : GOOGLE_CLIENT_ID</code>
+                <code>},{redirect_uri:'redirect.html'});</code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Hello.js - Callback</h2>
+            <pre>
+                <code>hello.on('auth.login', function(auth){</code>
+                <code> hello( auth.network ).api( '/me' ).then( function(r){</code>
+                <code>  label.innerHTML = 'Hey ' + r.name;</code>
+                <code> });</code>
+                <code>});</code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Hello.js - Button</h2>
+            <pre>
+                <code>&lt;button</code>
+                <code>  onclick="hello( 'facebook' ).login()"&gt;</code>
+                <code>  Facebook</code>
+                <code>&lt;/button&gt;</code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>oAuth.io - Include & Config</h2>
+            <pre>
+                <code>&lt;script src="path/to/oauth.js"&gt;&lt;/script&gt;</code>
+                <code>&lt;script&gt;</code>
+                <code>  OAuth.initialize('your_app_key');</code>
+                <code>&lt;/script&gt;</code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>oAuth.io - Callback</h2>
+            <pre>
+                <code>OAuth.popup('provider')</code>
+                <code>  .done(function (result) {</code>
+                <code>    // Perform API calls</code>
+                <code>  })</code>
+                <code>  .fail(function (error) {</code>
+                <code>    // Handle errors</code>
+                <code>  });</code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Ember.js</h2>
+            <ul>
+                <li>
+                    <a href="https://github.com/amkirwan/ember-oauth2">ember-oauth2</a></li>
+                <li>
+                    <a href="https://github.com/simplabs/ember-simple-auth">ember-simple-auth</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>AngularJS</h2>
+            <ul>
+                <li>
+                    <a href="https://github.com/andreareginato/oauth-ng">oauth-ng</a>
+                </li>
+                <li>Use oauth.io (if you have money)</li>
+                <li>Use Hello.js</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide shout distant">
+        <div>
+            <h2><span class="distinct">Why not?</span></h2>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Why not?</h2>
+            <ul>
+                <li class="next">The provider may not support CORS</li>
+                <li class="next">Your client ID is public</li>
+                <li class="next">Signatures replaced by HTTPS</li>
+                <li class="next">Authentication between servers</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide shout distant">
+        <div>
+            <h2>Thank you!</h2>
+        </div>
+    </section>
+
+    <section class="slide shout distant">
+        <div>
+            <h2>Questions?</h2>
+        </div>
+    </section>
+
+    <section class="slide shout distant">
+        <div>
+            <h2><strong>10Clouds</strong> is hiring!</h2>
+        </div>
+    </section>
 
     <div class="progress">
         <div></div>
